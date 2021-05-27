@@ -1,0 +1,297 @@
+.modal-dialog {
+  max-width: 600px !important;
+  margin: 45px auto 10px !important;
+  @include breakpoint(tablet) {
+    max-width: 94% !important;
+  }
+  .modal-content {
+    position: relative;
+    border: none;
+    padding: 30px;
+    background-color: $white;
+    border-radius: 4px;
+    @media (max-width: 767px) {
+      padding: 30px 15px;
+    }
+    .modal-header {
+      border-bottom: none;
+      padding: 0;
+      margin-bottom: 35px;
+      .modal-title {
+        @include font(700, 24px, 28px);
+        color: $black;
+        width: 100%;
+        text-align: center;
+        @include breakpoint(mobile) {
+          font-size: 20px;
+          padding: 25px 10px 0px;
+        }
+        .close {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          width: 22px;
+          height: 22px;
+          background: url(../images/close.svg) no-repeat center;
+          background-size: 22px;
+        }
+      }
+    }
+    .modal-body {
+      padding: 0;
+      .check-to-proceed {
+        margin: 25px 0 20px;
+      }
+      .btn-to-click {
+        margin-bottom: 20px;
+        &.btn-to-click-in-fp {
+          margin-top: 35px;
+        }
+      }
+      .btn-theme {
+        //margin-left: 5px;
+        font-size: 16px;
+      }
+      .click-to-action {
+        @include flex-item(center, center);
+        @include font(400, 18px, 21px);
+        color: $black;
+        .btn-theme {
+          margin-left: 5px;
+          font-size: 16px!important;
+        }
+        @media (max-width: 500px) {
+          flex-direction: column;
+        }
+      }
+      .btn-forgot-pswrd {
+        margin: 15px 0 20px;
+        float: left;
+        cursor: pointer;
+      }
+      .two-inputs-holder {
+        @media (max-width: 767px) {
+          flex-direction: column;
+          .form-group {
+            width: 100%;
+            &:last-child {
+              margin: 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.customer-signup {
+    .modal-header {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.modal-signup.modal-dialog {
+  height: 100%;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  max-width: 100% !important;
+  padding-top: 45px;
+  @include breakpoint(tablet) {
+    max-width: 100% !important;
+  }
+  .modal-content {
+    max-height: 95%;
+    overflow-y: auto;
+    max-width: 600px;
+  }
+  @media (min-height: 750px) {
+    .modal-content {
+      max-height: 630px;
+    }
+  }
+}
+
+.modal-mini.modal-dialog {
+  @include flex-item(center, center);
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  height: 100%;
+  width: 100%;
+  .modal-header {
+    margin-bottom: 0;
+  }
+  .modal-content {
+    padding: 50px 50px 30px;
+    p.description, .description {
+      @include font(400, 18px, 30px);
+      margin-bottom: 25px;
+    }
+    .buttons-container {
+      @include flex-item(flex-end, center);
+      .btn-theme {
+        font-weight: 500 !important;
+        border-radius: 4px;
+        text-transform: capitalize;
+        &:last-child:not(:first-child) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  &.modal-confirmation-pop {
+    .description {
+      text-align: center;
+    }
+    .btn-theme {
+      min-width: 200px;
+    }
+    .buttons-container {
+      @media (max-width: 767px) {
+        flex-direction: column;
+        .btn-theme {
+          &:last-child:not(:first-child) {
+            margin: 20px 0 0;
+          }
+        }
+      }
+    }
+  }
+  &.modal-checkout-pop {
+    .buttons-container {
+      @media (max-width: 767px) {
+        flex-direction: column;
+        .btn-theme {
+          &:last-child:not(:first-child) {
+            margin: 20px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .modal {
+    &.show {
+      .modal-dialog {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+.modal-newsletter-pop {
+  .opacity-0 {
+    opacity: unset!important;
+  }
+  .modal-content {
+    padding: 0 0 30px 0!important;
+    .modal-header .modal-title .close {
+      @media (max-width: 767px) {
+      top: 15px;
+      }
+    }
+  }
+  .newsletter-container {
+    display: flex;
+    align-items: center;
+    @media (max-width: 767px) {      
+      flex-direction: column;
+    }
+    
+  }
+  img {
+    width: 325px;
+    max-width: none;
+    @media screen and (device-aspect-ratio: 40/71) { 
+      width: 230px;
+    }
+  }
+  .welcome-container {
+    margin-left: 50px;
+    padding: 60px 45px 0 0;
+    @media (max-width: 767px) {
+      padding: 10px 45px 0 0;
+    }
+  }
+  .success-container {
+    margin-left: 50px;
+    padding: 60px 45px 0 0;
+  }
+  .welcome-container h2, .success-container h2{   
+    font-size: 28px!important;
+    margin-bottom: 16px!important;
+    line-height: 33;
+    mix-blend-mode: normal;
+  }
+  p {
+    font-style: normal;
+    font-weight: 500!important;
+    font-size: 13px;
+    line-height: 20.4px;
+  }
+  .btn-submit {
+    min-width: 100%!important;
+    min-height: 46px;
+    font-weight: 500 !important;
+    text-transform: initial;
+    margin: 20px 0px 0px 0px;
+
+} 
+  button.disabled{
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+  span.error-message {
+    @include font(500, 12px, 14px);
+    color: $text-erorr;
+    margin-top: 4px;
+}
+.success-container .btn-submit {
+  background: #60B158;
+  border: 1px solid #60B158;
+}
+.form-group {
+  margin: 8px 0 0 0 !important;
+  
+
+  .form-control {
+    border: 1px solid #f8f8f8!important ;
+    height: 46px!important;
+    background: #f8f8f8!important;
+    font-size: 14px;
+    color: rgba($black, 0.9);
+    letter-spacing: -0.02em;
+    &::-webkit-input-placeholder {
+        @include font(500, 14px, 16px);
+        color: rgba($black, 0.3);
+        letter-spacing: -0.02em;
+    }
+    &:-moz-placeholder {
+        @include font(500, 14px, 16px);
+        color: rgba($black, 0.3);
+        letter-spacing: -0.02em;
+    }
+    &::-moz-placeholder {
+        @include font(500, 14px, 16px);
+        color: rgba($black, 0.3);
+        letter-spacing: -0.02em;
+    }
+    &:-ms-input-placeholder {
+        @include font(500, 14px, 16px);
+        color: rgba($black, 0.3);
+        letter-spacing: -0.02em;
+    }
+    &:focus, &:not([value=""]):not(:focus):invalid{ 
+        border: 1px solid #e1e0e0!important;
+        background: transparent!important;
+    }
+}
+}
+}
+// .modal-newsletter-pop .modal-content .modal-header .modal-title .close {
+//   top: 20px;
+// }

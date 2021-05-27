@@ -1,0 +1,201 @@
+.celebrateus-container {
+    .title {
+        text-align: center;
+        font-size: 28px;
+    }
+    .wrapper-banner-demo {
+        background: url("../../assets/images/celebrateUs-wal.png") no-repeat
+        center bottom;
+        background-size: cover;
+    }
+    .banner-demo {
+        min-height: 600px!important;
+    }
+    .mission-container {
+        @media (min-width: 767px) {
+        width: 860px;
+        }
+        max-width: 860px;
+        margin: -270px auto 0;
+        background: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        padding: 65px 65px 45px;
+        margin-top: -270px;
+        position: relative;
+        z-index: 9;
+        margin-bottom: 60px;
+        p{
+        line-height: 32px;
+        }
+    }
+    .celeb-page-container {
+        max-width: 1180px;
+        margin: -25px auto 0;
+        //padding: 0px 160px;
+        .red-font {
+            color: #DD4A2C;
+            font-weight: 500!important;
+        }
+        .left-align {
+            margin-left: 35px;
+            margin-bottom: 30px;
+        }
+        .our-story-container {
+            //max-width: 860px;
+            @media (min-width: 767px) {
+            padding: 67px 160px 0px;
+            }
+            padding: 0px 32px;
+            margin: 0 auto ;
+            .sub-title {
+                font-size: 28px;
+            }
+            p {
+                line-height: 32px;
+                font-size: 15px;
+                text-align: justify;
+            }
+        } 
+        .img-div-container {
+            padding: 30px 0px;
+            @media (min-width: 767px) {
+            margin: 0 160px;            
+            }
+            margin-left: 60px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            @media (max-width: 767px) {
+            .img-container-mini {
+                display: flex;
+                width: 50%;
+            }
+            }
+            .img-text {
+                .img-container {
+                    padding: 15px;
+                    border-radius: 50%;
+                    background-color: #E9EEE7;
+                }
+                >p {
+                    margin-top: 10px;
+                    text-align: center;
+                    @media (max-width: 767px) {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+        .visionNvalue-container {
+            padding: 67px 0 30px 0;
+            @media (min-width: 767px) {
+            margin: 0 160px;
+            }
+            margin: 0px 32px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            .vision-value {
+                line-height: 32px;
+            }
+            
+            .vision-img {
+                width: 420px;
+                height: 500px;
+            }
+            .vison-bullets{
+                >li{
+                    line-height: 30px;
+                    text-align: justify;
+                }                    
+            }
+        }
+
+        .ourLeaderShip-container {
+            @media (min-width: 767px) {
+            margin: 0 160px;
+            }
+            margin: 0px 32px;
+            padding: 50px 0 50px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            p {
+                line-height:  32px;
+            }
+            .img-container {
+                width: 420px;
+                height: 500px;
+            }                
+        }
+
+        .growth-nature-container {
+            @media (min-width: 767px) {
+            margin: 0 160px;
+            }
+            margin: 0px 32px;
+            padding: 50px 0 50px 0;
+            .img-container {
+                width: 420px;
+                height: 365px;
+            }
+            p {
+                line-height: 32px;
+            }
+        }
+   
+    }
+    .ourTeam-container {
+        padding: 60px 325px 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background: linear-gradient(180deg, rgba(240, 251, 252, 0.76) 0%, rgba(240, 251, 252, 0.29) 100%);
+        .title {
+            text-align: center;
+            font-size: 28px;
+        }
+        .image-dimension {
+            height: 208px;
+            width: 222px;
+        }
+        .info-container{
+            background-color: #F4F4F4;
+            padding: 15px 10px 30px 10px;
+        }
+        h5 {
+            font-weight: 600px!important;
+            text-align: center;                   
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    .contact-info-container {
+        padding: 30px 0;
+        @media (min-width: 767px) {
+        .right-align {
+            text-align: right;
+        }
+        
+        }
+        @media (max-width: 767px) {
+            .mobile-cont-container {
+                margin: 0px 70px;
+                >div {
+                    padding: 10px 0px;
+                }
+            }
+        }
+        
+        .title {
+            padding-bottom: 10px; 
+        }
+        .img-dimension {
+            // width: 24px;
+            // height: 18px;
+            display: inline;
+            margin-right: 10px;
+        }
+        .info-container{
+            padding: 0;               
+            max-width: 6.999999%;
+        }
+        
+    }
+
+}

@@ -1,0 +1,24 @@
+.custom-file-upload {
+    label {
+        @include font(500, 14px, 16px);
+        color: $main-link-color;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0 10px;
+        span {
+            text-align: center;
+        }
+    }
+    .selected-files {
+        @include font(500, 16px, 19px);
+        color: $black;
+        span {
+            @include font(500, 14px, 16px);
+            color: $text-color-sub;
+            &.file-name {
+                word-break: break-word;
+                color: $main-btn-color !important;
+            }
+        }
+    }
+}

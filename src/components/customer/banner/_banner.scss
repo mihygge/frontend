@@ -1,0 +1,263 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/mixin.scss";
+
+.wrapper-banner-customer {
+    background: url("../../../assets/images/banner-customer.png") no-repeat
+        center bottom;
+    background-size: cover;
+    position: relative;
+    // margin-top: 69px;
+    &:before {
+        @include positioned(0, 0);
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            0deg,
+            #000000 -5.32%,
+            rgba(0, 0, 0, 0) 113.08%
+        );
+    }
+    @media (min-width: 1281px) {
+        background-position: center bottom 45%;
+    }
+    .banner-customer {
+        @include flex-d(center, center, column);
+        min-height: 340px;
+        position: relative;
+        z-index: 9;
+        .title-main {
+            @include font(700, 50px !important, 59px !important);
+            margin-bottom: 60px !important;
+            color: $white;
+        }
+        .section-filters {
+            @include flex-d(center, flex-start, column);
+            width: 100%;
+            form {
+                width: 100%;
+            }
+            span {
+                &.error-message {
+                    // margin-top: 0;
+                    // position: absolute;
+                    // bottom: -20px;
+                    @include font(700, 13px, 14px);
+                }
+            }
+        }
+    }
+
+    .filters-primary {
+        display: flex;
+        margin-bottom: 25px;
+        .filters-primary-inner {
+            @include flex-item(flex-start, flex-start);
+            border: 1px solid rgba($main-link-color, 0.5);
+            border-radius: 4px;
+            background: $white;
+            height: 38px;
+        }
+        .selector-primary {
+            min-width: 300px;
+            position: relative;
+            z-index: 9999;
+            margin-bottom: 0 !important;
+            .select-dropdown__control {
+                border: none;
+            }
+            &:nth-of-type(1) {
+                .select-dropdown__control {
+                    background: rgba(238, 116, 70, 0.1);
+                    border-right: 1px solid rgba($main-link-color, 0.5);
+                }
+            }
+            &:nth-last-of-type(1) {
+                .select-dropdown__control {
+                    border-radius: 0 4px 4px 0;
+                    border-left: 0;
+                }
+            }
+        }
+    }
+    .filters-secondary {
+        @include flex-item(flex-start, flex-start);
+        height: 75px;
+        width: 100%;
+        > div {
+            margin-right: 10px;
+        }
+        .form-group {
+            margin-bottom: 0 !important;
+            position: relative;
+            .form-control {
+                min-height: 56px;
+            }
+        }
+        .field-location {
+            position: relative;
+            min-width: calc(100% - 200px - 190px - 280px - 45px);
+            .icon-search {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 10px;
+                top: 19px;
+            }
+            .form-control {
+                padding-left: 35px;
+            }
+        }
+        .calendar {
+            min-width: 280px;
+        }
+        .field-beds {
+            min-width: 190px;
+        }
+        .btn-explore {
+            min-width: 200px;
+            text-transform: capitalize;
+            min-height: 56px;
+        }
+        .react-daterange-picker {
+            .react-daterange-picker__wrapper {
+                min-height: 56px;
+                padding-left: 42px;
+            }
+            .react-daterange-picker__calendar-button {
+                right: auto;
+                left: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 1155px) {
+    .wrapper-banner-customer {
+        .banner-customer {
+            align-items: flex-start;
+            .title-main {
+                font-size: 30px !important;
+                line-height: 32px !important;
+                margin-bottom: 30px !important;
+            }
+            .section-filters {
+                padding: 0;
+            }
+        }
+
+        .filters-primary {
+            margin-bottom: 15px;
+        }
+        .filters-secondary {
+            flex-wrap: wrap;
+            .form-group {
+                .form-control {
+                    min-height: 40px;
+                }
+            }
+            .field-location {
+                min-width: 45%;
+                margin-bottom: 15px;
+                .icon-search {
+                    top: 10px;
+                }
+                .form-control {
+                    padding-left: 35px;
+                }
+            }
+            .calendar {
+                min-width: 45%;
+                margin-bottom: 15px;
+            }
+            .field-beds {
+                min-width: 45%;
+            }
+            .btn-explore {
+                min-width: 45%;
+                min-height: 40px;
+                font-size: 16px;
+                line-height: 18px;
+            }
+            .react-daterange-picker {
+                .react-daterange-picker__wrapper {
+                    min-height: 40px;
+                }
+                .react-daterange-picker__calendar-button {
+                    &::before {
+                        top: 1px;
+                        background: url(/static/media/calendar1.e6e022bf.svg);
+                        background-size: cover;
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+                .react-daterange-picker__inputGroup__input {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .wrapper-banner-customer {
+        .banner-customer {
+            min-height: 250px;
+            .title-main {
+                font-size: 22px !important;
+                text-align: center;
+                line-height: 26px !important;
+                margin: 30px 0 15px !important;
+            }
+            .section-filters {
+                padding: 0;
+            }
+        }
+        .filters-primary {
+            margin-bottom: 15px;
+            .selector-primary {
+                min-width: 100%;
+                margin-bottom: 0 !important;
+            }
+            .filters-primary-inner {
+                width: 50%;
+            }
+        }
+        .filters-secondary {
+            flex-wrap: wrap;
+            .field-location {
+                min-width: 100%;
+                .icon-search {
+                    top: 10px;
+                }
+            }
+            > div {
+                margin-right: 0;
+            }
+            .form-group {
+                margin-bottom: 15px !important;
+                .form-control {
+                    min-height: 40px;
+                }
+            }
+            .calendar {
+                min-width: 100%;
+                margin-bottom: 15px;
+            }
+            .react-daterange-picker {
+                .react-daterange-picker__wrapper {
+                    min-height: 40px;
+                }
+            }
+            .field-beds {
+                min-width: 100%;
+            }
+            .btn-explore {
+                min-width: 100%;
+                font-size: 16px;
+                line-height: 18px;
+                min-height: 40px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

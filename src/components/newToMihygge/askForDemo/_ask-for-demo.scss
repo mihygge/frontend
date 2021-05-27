@@ -1,0 +1,205 @@
+.wrapper-ask-for-demo {
+    .wrapper-banner-demo {
+        background: url("../../../assets/images/bg-banner-demo.png") no-repeat
+        center bottom;
+        background-size: cover;
+        .banner-demo {
+            min-height: 420px;
+            flex-direction: row;
+            align-items: flex-start;
+            padding-top: 60px;
+            .title-page {
+                @include font(500, 32px, 38px);
+                color: $white;
+                margin: 0;
+                padding-bottom: 15px;
+                position: relative;
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 42px;
+                    height: 1px;
+                    left: calc(50% - 21px);
+                    bottom: 0;
+                    background: $white;
+                }
+            }
+        }
+    }
+    .wrapper-main-content {
+        padding-bottom: 60px;
+    }
+    .form-container-demo {
+        max-width: 720px;
+        margin: -280px auto 0;
+        background: $white;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        padding: 45px 65px;
+        margin-top: -280px;
+        position: relative;
+        z-index: 9;
+        margin-bottom:60px;
+        .title-form {
+            @include font(700, 12px !important, 16px !important);
+            color: rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin: 0 0 15px;
+            &.title2-form {
+                margin: 10px 0 25px !important;
+            }
+        }
+        .form-group {
+            margin-bottom: 25px !important;
+            label {
+                font-size: 13px;
+                margin-bottom: 12px;
+                sup {
+                    top: 1px;
+                    left: -2px;
+                }
+            }
+            .form-control, .datepicker-field {
+                border: 1.5px solid #f8f8f8;
+                height: 46px;
+                background: #f8f8f8;
+                font-size: 14px;
+                color: rgba($black, 0.9);
+                letter-spacing: -0.02em;
+                &::-webkit-input-placeholder {
+                    @include font(500, 14px, 16px);
+                    color: rgba($black, 0.3);
+                    letter-spacing: -0.02em;
+                }
+                &:-moz-placeholder {
+                    @include font(500, 14px, 16px);
+                    color: rgba($black, 0.3);
+                    letter-spacing: -0.02em;
+                }
+                &::-moz-placeholder {
+                    @include font(500, 14px, 16px);
+                    color: rgba($black, 0.3);
+                    letter-spacing: -0.02em;
+                }
+                &:-ms-input-placeholder {
+                    @include font(500, 14px, 16px);
+                    color: rgba($black, 0.3);
+                    letter-spacing: -0.02em;
+                }
+                &:focus, &:not([value=""]):not(:focus):invalid{ 
+                    border-color: #e1e0e0;
+                    background: transparent;
+                }
+            }
+            &.form-group-textarea {
+                label span {
+                    @include font(500, 12px, 16px);
+                    letter-spacing: -0.02em;
+                    color: rgba($black, 0.3);
+                }
+                .message-textarea {
+                    min-height: 120px;
+                }
+            }
+            .datepicker-field {
+                &:hover {
+                    border-color: #f8f8f8;
+                    background: #f8f8f8;
+                }
+            }
+            .select-dropdown-container {
+                .select-dropdown__control {
+                    min-height: 46px;
+                    border-color: #f8f8f8;
+                    background: #f8f8f8;
+                    &.select-dropdown__control--is-focused {
+                        border-color: #e1e0e0 !important;
+                        background: transparent;
+                    }
+                    .select-dropdown__placeholder {
+                        @include font(500, 14px, 16px);
+                        color: rgba($black, 0.3);
+                        letter-spacing: -0.02em;
+                    }
+                    .select-dropdown__single-value {
+                        font-size: 14px;
+                        color: rgba($black, 0.9);
+                        letter-spacing: -0.02em;
+                    }
+                    .select-dropdown__indicator {
+                        color: rgba($black, 0.5);
+                        * {
+                            color: rgba($black, 0.5);
+                            height: 15px;
+                        }
+                    }
+                }
+            } 
+        }
+        .time-input-field {
+            position: relative;
+            margin-bottom: 25px;
+            .form-group {
+                margin-bottom: 0 !important;
+            }
+            .time-format {
+                display: flex;
+                position: absolute;
+                right: 10px;
+                top: 37px;
+                span {
+                    @include flex-item(center, center);
+                    @include font(500, 13px, 16px);
+                    color: rgba($black, 0.3);
+                    text-transform: uppercase;
+                    height: 30px;
+                    width: 35px;
+                    border: 1px solid #e4e4e4;
+                    cursor: pointer;
+                    &:first-child {
+                        border-right: 0;
+                        border-radius: 5px 0 0 5px;
+                    }
+                    &:last-child {
+                        border-left: 0;
+                        border-radius: 0 5px 5px 0;
+                    }
+                    &.selected {
+                        color: rgba($white, 0.9);
+                        border-color: #474747;
+                        background-color: #474747;
+                    }
+                }
+            }
+        }
+        .btn-submit {
+            min-width: 140px;
+            min-height: 46px;
+            font-weight: 500 !important;
+            text-transform: capitalize;
+        }
+    }
+    .demo-booked-message-container {
+        padding: 0;
+        .message-body {
+            @include flex-d(center, center, column);
+            text-align: center;
+            padding: 40px;
+            min-height: 390px;
+            margin-bottom:60px;
+            h2 {
+                @include font(700, 12px !important, 16px !important);
+                letter-spacing: 0.1em;
+                color: rgba($black, 0.3);
+                margin: 12px 0 25px !important;
+                text-transform: uppercase;
+            }
+            p {
+                @include font(500, 16px !important, 160%);
+                color: rgba($black, 0.7);
+                max-width: 60%;
+            }
+        }
+    }
+}

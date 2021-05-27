@@ -1,0 +1,250 @@
+.modal {
+    .modal-dialog.modal-view-room {
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .modal-content {
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            padding: 70px 45px 30px;
+            @media (max-width: 767px) {
+                padding: 70px 15px 30px;
+                height: calc(100vh - 40px);
+            }
+            .modal-header {
+                margin-bottom: 0;
+                .modal-title .close {
+                    right: 15px;
+                    top: 30px;
+                    background-image: url(../../../assets/images/close-modal.svg);
+                }
+            }
+            .section-video-images {
+                margin-bottom: 35px;
+            }
+            .video-container {
+                border-radius: 4px;
+                margin-bottom: 10px;
+                min-height: 300px;
+                background-color: #C4C4C4;
+                @media (max-width: 767px) {
+                    min-height: 0;
+                }
+            }
+            .title-main {
+                font-weight: 700 !important;
+                color: $main-btn-color;
+                margin-bottom: 40px !important;
+                word-break: break-word;
+                @media (max-width: 767px) {
+                    margin-bottom: 20px !important;
+                }
+            }
+            .section-facilities {
+                border: none;
+                padding: 15px 0 0;
+            }
+            .section-facilities-list {
+                padding: 50px 0 0;
+                border-bottom: 0;
+                .list {
+                    width: calc(100%/3);
+                    &.list-last-two {
+                        width: calc(100%/3);
+                        flex-direction: column;
+                        > div {
+                            width: 100%;
+                            &:first-child {
+                                padding: 0 0 30px;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 1023px) {
+                    .list {
+                        width: 50%;
+                    }
+                }
+                @media (max-width: 500px) {
+                    padding-top: 30px;
+                    .list {
+                        width: 100%;
+                    }
+                }
+            }   
+            .section-bed-details {
+                padding: 25px;
+                border: 1px solid rgba($black, 0.1);
+                border-radius: 4px;
+                @media (max-width: 767px) {
+                    padding: 20px 0;
+                    border-right: 0;
+                    border-left: 0;
+                    border-radius: 0;
+                }
+                .section-availability-filters {
+                    padding: 0 0 20px;
+                    h2 {
+                        display: none;
+                    }
+                    .form-filters {
+                        .calendar-input-holder-care {
+                            width: calc(100% - 180px - 150px - 20px);
+                            .react-daterange-picker__wrapper {
+                                min-height: 36px;
+                            }
+                        }
+                        .select-guest {
+                            width: 180px;
+                            .select-dropdown__control {
+                                min-height: 36px;
+                                height: 36px;
+                                background-position: 7px 8px;
+                            }
+                        }
+                        .btn-theme {
+                            @include font(500, 16px, 19px);
+                            min-width: 150px; 
+                            min-height: 36px;
+                        }
+                        @media (max-width: 767px) {
+                            flex-direction: column;
+                            .calendar-input-holder-care, .select-guest {
+                                width: 100%;
+                                margin-bottom: 20px !important;
+                            }
+                        }
+                    }
+                }
+                .table {
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid rgba($main-link-color, 0.1);
+                    tbody tr:last-child {
+                        border-bottom: 1px solid rgba($main-link-color, 0.1);
+                    }
+                    thead {
+                        th {
+                            @include font(500, 14px, 16px);
+                            height: 44px;
+                            background-color: rgba($main-btn-color, 0.1);
+                            border: none;
+                            padding: 5px 5px 5px 25px;
+                            vertical-align: middle;
+                            border-right: 1px solid rgba($main-link-color, 0.1);
+                            &:last-child {
+                                border-right: 0;
+                            }
+                        }
+                    }
+                    tbody {
+                        td {
+                            border-top: none;
+                            @include font(400, 16px, 19px);
+                            color: $black;
+                            height: 30px;
+                            vertical-align: middle;
+                            border-right: 1px solid rgba($main-link-color, 0.1);
+                            &:last-child {
+                                border-right: 0;
+                            }
+                            .form-group-radio-checkbox {
+                                width: 20px;
+                                margin: 0 auto;
+                            }
+                            @media (max-width: 767px) { 
+                                font-size: 14px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                    thead th, tbody td {
+                        &:nth-of-type(1) {
+                            width: calc(100% - 250px);
+                            @media (max-width: 767px) { 
+                                width: calc(100% - 120px);
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            width: 250px;
+                            @media (max-width: 767px) { 
+                                width: 120px;
+                            }
+                        }
+                    }
+                    td.cell-price-per-day {
+                        vertical-align: top;
+                        padding-left: 0;
+                        .price-per-day {
+                            padding-left: 25px;
+                            padding-bottom: 10px;
+                            border-bottom: 1px solid rgba($main-link-color, 0.1);
+                            label {
+                                @include font(500, 14px, 16px);
+                                color: rgba($black, 0.7);
+                                margin-bottom: 5px;
+                            }
+                            strong {
+                                @include font(500, 18px, 27px);
+                                color: $black;
+                                display: block;
+                                span {
+                                    @include font(500, 12px, 14px);
+                                    color: rgba($black, 0.7);
+                                }
+                            }
+                            @media (max-width: 767px) { 
+                                padding-left: 10px;
+                                strong {
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .section-total-price {
+                    @include flex-item(space-between, flex-end);
+                    .price-box {
+                        @include font(400, 12px, 14px);
+                        color: $black;
+                        width: 300px;
+                        min-height: 80px;
+                        background-color: rgba(#ffdc73, 0.5);
+                        border-radius: 4px;
+                        padding: 12px;
+                        word-break: break-all;
+                    }
+                    .btn-theme {
+                        min-width: 110px;
+                        min-height: 30px;
+                        background: $main-btn-color;
+                        color: $white;
+                    }
+                    .btn-proceed {
+                        @include font(700, 14px, 16px);
+                        min-width: 190px;
+                        text-transform: uppercase;
+                        margin-bottom: -10px;
+                        &.btn-transparent-small {
+                            cursor: not-allowed;
+                            pointer-events: auto !important;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .price-box {
+                            width: 100%;
+                            min-height: 50px;
+                            margin-bottom: 15px;
+                        }
+                        .btn-theme {
+                            margin: 20px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

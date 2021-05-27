@@ -1,0 +1,86 @@
+// Calendar
+
+@import '../../../assets/styles/colors.scss';
+@import '../../../assets/styles/mixin.scss';
+
+.react-daterange-picker {
+    width: 100%;
+    .react-daterange-picker__wrapper {
+        @include font(500, 16px, 19px);
+        width: 100%;
+        border: 1px solid rgba($black, 0.5);
+        border-radius: 4px;
+        background: $white;
+        padding: 5px 15px;
+        height: 36px;
+        align-items: center;
+        cursor: pointer;
+    }
+    .react-daterange-picker__inputGroup {
+        flex-grow: unset;
+        padding: 0;
+    }
+    .react-daterange-picker__inputGroup__input, .react-daterange-picker__range-divider{
+        @include font(500, 16px, 19px);
+    }
+    .react-daterange-picker__range-divider {
+        padding: 0 9px 0 0;
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+    .react-daterange-picker__clear-button {
+        display: none;
+    }
+    .react-daterange-picker__calendar-button {
+        position: absolute;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        svg {
+            display: none;
+        }
+        &:before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(../../../assets/images/calendar1.svg);
+            top: 0;
+            left: 0;
+        }
+    }
+    .react-daterange-picker__calendar {
+        top: 100% !important;
+        left: 0 !important;
+        @media (max-width: 400px) {
+            width: 100% !important;
+        }
+        .react-calendar {
+            border-radius: 4px;
+        }
+        .react-calendar__navigation {
+            height: 40px;
+            margin-bottom: 10px;
+            button.react-calendar__navigation__label {
+                @include font(500, 16px, 19px);
+            }
+        }
+        .react-calendar__month-view__weekdays {
+            display: none !important;
+        }
+        .react-calendar__month-view__days {
+            .react-calendar__tile {
+                * {
+                    @include font(500, 15px, 17px);
+                    color: $black;
+                }
+            }
+            .react-calendar__tile--hasActive {
+                background: $main-link-color;
+                * {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

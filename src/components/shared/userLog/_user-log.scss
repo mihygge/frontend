@@ -1,0 +1,76 @@
+@import '../../../assets/styles/_colors.scss';
+@import '../../../assets/styles/_mixin.scss';
+
+.container-user-logo {
+    @include flex-item(flex-end, center);
+    width: 100%;
+    @media (max-width: 767px) {
+        justify-content: space-between;
+    }
+}
+
+.user-log-dropdown {
+    > button {
+        background: none !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+    .dropdown-menu {
+        width: 100%;
+        transform: translate(0) !important;
+        top: 100% !important;
+        padding: 0 10px;
+        .dropdown-item {
+            @include font(500, 14px, 16px);
+            color: $black;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            a {
+                @include font(500, 14px, 16px);
+                color: $black;
+            }
+            &:hover {
+                color: $main-btn-color;
+                background: none !important;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.user {
+    @include flex-item(center, center);
+    padding: 5px 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    min-width: 180px;
+    @media (max-width: 767px) {
+        min-width: 160px;
+    }
+    img {
+        @include circle(30px);
+    }
+    span {
+        @include circle(28px);
+        @include flex-item(center, center);
+        @include font(700, 18px, 18px);
+        color: $white;
+        background-color: $main-btn-color;
+        text-transform: uppercase;
+        @media (max-width: 767px) {
+            letter-spacing: -2px;
+        }
+    }
+    strong {
+        @include font(500, 14px, 16px);
+        text-transform: capitalize;
+        color: $black;
+        padding-left: 8px;
+        @media (max-width: 767px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}

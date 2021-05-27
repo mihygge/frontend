@@ -1,0 +1,38 @@
+.form-group {
+    @include flex-d(flex-start, flex-start, column);
+    margin-bottom: 20px !important;
+    &:last-child:not(:first-child) {
+        margin-bottom: 0;
+    }
+    label {
+        @include font(500, 14px, 16px);
+        color: $text-color-sub;
+        margin: 0 0 5px;
+        sup {
+            font-weight: 700 !important;
+            font-size: 16px;
+            top: -1px;
+        }
+    }
+    .form-control {
+        @include font(500, 16px, 19px);
+        @include placeholder-color($text-color-sub);
+        color: $black;
+        border: 1px solid rgba($black, 0.5);
+        border-radius: 4px;
+        background: $white;
+        padding: 5px 15px;
+        height: 36px;
+        &:hover, &:focus {
+            border-color: rgba($black, 0.5);
+        }
+    }
+    &.form-error {
+        label {
+            color: $text-erorr;
+        }
+        .form-control {
+            border-color: $field-error;
+        }
+    }
+}

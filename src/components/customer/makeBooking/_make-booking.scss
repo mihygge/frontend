@@ -1,0 +1,197 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/mixin.scss";
+
+.wrapper-make-booking {
+    .custom-container {
+        padding: 40px 30px 0;
+    }
+
+    .facility-info-brief {
+        margin-bottom: 40px;
+        h2 {
+            margin-bottom: 15px !important;
+        }
+        p {
+            @include font(400, 18px, 25px);
+            color: rgba($black, 0.6);
+        }
+    }
+}
+
+.section-home-details {
+    .room-details.home-details {
+        &:last-child {
+            margin-bottom: 20px;
+        }
+        .img-container {
+            width: 250px;
+        }
+        .details-brief {
+            justify-content: space-between;
+            h2 {
+                color: $black;
+                margin-bottom: 10px !important;
+            }
+            .room-type {
+                a {
+                    color: $main-btn-color;
+                }
+            }
+            .detail-licence {
+                @include font(500, 16px, 19px);
+                color: rgba($black, 0.6);
+                margin-top: 15px;
+            }
+        }
+        .details-fee.buttons-container {
+            justify-content: flex-end;
+            .btn-theme {
+                min-width: 120px;
+                min-height: 30px;
+                &.btn-transparent {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    &.section-no-home-message {
+        @include flex-item(center, center);
+        flex-direction: column;
+        span {
+            @include font(500, 25px, 28px);
+            padding-bottom: 10px;
+        }
+        p {
+            color: #8a7f7f;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 500 !important;
+        }
+    }
+}
+@media (max-width: 996px) {
+    .wrapper-make-booking {
+        .custom-container {
+            padding: 30px 15px 0;
+        }
+        .facility-info-brief {
+            margin-bottom: 35px;
+            h2 {
+                font-size: 22px !important;
+                line-height: 26px !important;
+            }
+            p {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+    .room-details {
+        padding: 15px;
+    }
+    .section-home-details {
+        .room-details.home-details {
+            .details-fee.buttons-container {
+                justify-content: stretch;
+            }
+            .details-brief {
+                h2 {
+                    font-size: 20px !important;
+                    line-height: 24px !important;
+                }
+                .detail-licence {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+    .section-facilities {
+        ul {
+            li {
+                span {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .wrapper-make-booking {
+        .custom-container {
+            padding: 170px 15px 0;
+            text-align: center;
+        }
+        .facility-info-brief {
+            margin-bottom: 30px;
+            h2 {
+                margin-bottom: 15px !important;
+                font-size: 20px !important;
+                line-height: 18px !important;
+            }
+            p {
+                font-size: 16px;
+                text-align: justify;
+                line-height: 18px;
+            }
+        }
+    }
+    .section-home-details {
+        .room-details.home-details {
+            padding: 15px;
+            flex-wrap: wrap;
+            .img-container {
+                margin: 0 auto;
+            }
+            .details-brief {
+                width: 100%;
+                padding: 0;
+                h2 {
+                    font-size: 20px !important;
+                    line-height: 24px !important;
+                    padding-top: 15px;
+                }
+                .room-type {
+                    margin-bottom: 15px;
+                    justify-content: center;
+                    span {
+                        margin-right: 16px;
+                    }
+                }
+                .detail-licence {
+                    margin-top: 10px;
+                }
+            }
+            .details-fee.buttons-container {
+                margin-top: 15px;
+                justify-content: center;
+                .btn-theme {
+                    &.btn-transparent {
+                        margin-bottom: 0;
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .section-home-details {
+        .room-details.home-details {
+            .details-fee.buttons-container {
+                width: 100%;
+                flex-wrap: wrap;
+                .btn-theme {
+                    min-width: 100%;
+                    margin-left: 0;
+                    &.btn-transparent {
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

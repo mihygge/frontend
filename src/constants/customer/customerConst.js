@@ -1,0 +1,1 @@
+export const searchByLocationType = ['city', 'county', 'state'];

@@ -1,0 +1,151 @@
+@import "../../../assets/styles/_colors.scss";
+@import "../../../assets/styles/_mixin.scss";
+
+.wrapper-footer {
+    background: #f8f8f9;
+    .items-footer {
+        @include flex-item(space-between, flex-start);
+        padding: 30px 0;
+        .card-items {
+            ul {
+                li {
+                    margin-bottom: 15px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    a {
+                        @include font(400, 16px, 18px);
+                        color: rgba($black, 0.7);
+                    }
+                }
+                .btn-show-more {
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+            }
+            &.senior-living {
+                min-width: 320px;
+                @media (max-width: 767px) {
+                    min-width: 0;
+                }
+            }
+            &.home-share {
+                min-width: 265px;
+                @media (max-width: 767px) {
+                    min-width: 0;
+                }
+            }
+            &.social-media-items {
+                ul li a {
+                    @include flex-item(flex-start, center);
+                    img {
+                        width: 18px;
+                        margin-right: 10px;
+                    }
+                    // i.fa {
+                    //     @include flex-item(center, center);
+                    //     @include circle(18px);
+                    //     color: $white;
+                    //     background-color: $black;
+                    //     font-size: 11px;
+                    //     margin-right: 10px;
+                    // }
+                }
+            }
+        }
+    }
+}
+.wrapper-copyrights {
+    background: $black;
+    .section-copyrights {
+        display: flex;
+        justify-content: flex-end;
+        .section-right {
+            @include flex-d(flex-start, center, row);
+            width: 50%;
+            min-height: 50px;
+            p {
+                @include font(500, 16px, 18px);
+                color: $white;
+                margin: 0 20px 0 0;
+            }
+            .btn-theme {
+                color: $white;
+                img {
+                    margin: 1px 10px 0 0;
+                }
+            }
+        }
+    }
+}
+/* Media query for footer */
+// Large devices (desktops, 1200px and up)
+@media (max-width: 1023px) {
+    .wrapper-copyrights {
+        .section-copyrights {
+            .section-right {
+                width: auto;
+                p {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+    .wrapper-footer {
+        .items-footer {
+            flex-wrap: wrap;
+            .card-items {
+                width: 50%;
+                padding-right: 25px;
+                &:nth-child(-n + 2) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .wrapper-footer {
+        .items-footer {
+            padding: 0 0 25px;
+            width: 100%;
+            flex-direction: column;
+            .card-items {
+                width: 100%;
+                padding: 0;
+                h4 {
+                    font-size: 16px !important;
+                    line-height: 19px !important;
+                    padding: 24px 0 0 0;
+                    margin: 0 0 10px !important;
+                }
+                ul {
+                    li {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                    }
+                }
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    .wrapper-copyrights {
+        .section-copyrights {
+            padding: 15px 0;
+            .section-right {
+                width: 100%;
+                flex-direction: column;
+                .btn-theme {
+                    font-weight: 500 !important;
+                    font-size: 16px;
+                }
+                p {
+                    padding-top: 10px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

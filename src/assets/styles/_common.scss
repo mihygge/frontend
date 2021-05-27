@@ -1,0 +1,588 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body * {
+    @include font(400, 16px, normal);
+    color: $text-color-sub;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    &:focus,
+    &:active {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    @include font(500, 24px !important, 28px !important);
+    color: $black;
+    margin: 0 0 30px !important;
+    text-transform: capitalize;
+}
+
+h1 {
+    @include font(700 !important, 32px !important, 38px !important);
+}
+
+h3 {
+    font-size: 20px !important;
+    line-height: 23px !important;
+}
+
+h4 {
+    font-size: 18px !important;
+    line-height: 21px !important;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+strong,
+b {
+    font-weight: 700 !important;
+}
+
+button:disabled,
+button.disabled,
+a:disabled,
+a.disabled {
+    pointer-events: all !important;
+    cursor: not-allowed !important;
+}
+
+.custom-container,
+.custom-container-mini {
+    @include clearfix();
+    max-width: 1180px;
+    margin: 0 auto;
+    @media (max-width: 1200px) {
+        padding: 0 15px;
+    }
+}
+
+.custom-container-mini {
+    max-width: 1170px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+// Common for the site
+
+// Buttons
+.btn-theme,
+.btn.btn-theme {
+    @include font(700, 18px, 21px);
+    @include flex-item(center, center);
+    background: $main-btn-color;
+    border: 1px solid $main-btn-color;
+    min-height: 40px;
+    min-width: 250px;
+    border-radius: 6px;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px;
+    &.medium-size {
+        min-width: 200px;
+    }
+    &.btn-in-modal {
+        width: 100%;
+        text-transform: capitalize;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background: $main-btn-color;
+        color: $white;
+        border-color: $main-btn-color;
+    }
+    &.btn-transparent {
+        color: $main-btn-color;
+        background: $white;
+        border-color: $main-btn-color;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $main-btn-color;
+            background: $white;
+            border-color: $main-btn-color;
+        }
+        &.btn-black {
+            @include font(500, 14px, 16px);
+            color: $black;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+            border-color: rgba(#dadada, 0.5);
+            text-transform: capitalize;
+            min-height: 30px;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $black;
+                border-color: rgba(#dadada, 0.5);
+            }
+        }
+        &.back-btn {
+            min-width: 120px;
+        }
+    }
+    &.btn-no-box {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        color: $main-link-color;
+        text-transform: capitalize;
+        &.btn-no-box-small {
+            @include font(500, 14px, 16px);
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            background: none;
+            border: none;
+            color: $main-link-color;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.5;
+    }
+}
+
+.btn-transparent-small,
+.btn.btn-transparent-small {
+    @include font(500, 14px, 16px);
+    @include flex-item(center, center);
+    color: $black;
+    min-width: 120px;
+    height: 30px;
+    background: $white;
+    border: 0.5px solid $border-light;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-transform: capitalize;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $white;
+        border: 0.5px solid $border-light;
+        color: $black;
+    }
+    &.btn-transparent-large {
+        font-size: 10px;
+        line-height: 12px;
+        min-height: 20px;
+        border-radius: 2px;
+        border: 1px solid $black;
+        text-transform: uppercase;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $white;
+            border: 1px solid $black;
+            color: $black;
+        }
+    }
+}
+
+// Form elements
+
+.two-inputs-holder {
+    @include flex-item(flex-start, flex-start);
+    .form-group {
+        width: calc(50% - 10px);
+        &:last-child:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+
+.three-inputs-holder {
+    @include flex-item(flex-start, flex-start);
+    > .form-group {
+        width: calc((100% / 3) - (40px / 3));
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.four-inputs-holder {
+    @include flex-item(flex-start, flex-start);
+    .form-group {
+        width: calc(25% - 15px);
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.info-message-user {
+    @include font(500, 16px, 19px);
+    display: block;
+    max-width: 80%;
+    margin: 0 auto 15px;
+    text-align: center;
+    color: $main-link-color;
+}
+
+span.error-message {
+    @include font(500, 12px, 14px);
+    color: $text-erorr;
+    margin-top: 4px;
+}
+
+.container-full {
+    width: 100%;
+}
+
+.message-textarea {
+    min-height: 80px;
+}
+
+.nav-custom-tabs {
+    .tab-content:not(.tab-content-rooms) {
+        padding-top: 35px;
+        @media (max-width: 767px) {
+            padding-top: 25px;
+        }
+    }
+    .tab-content-rooms .tab-pane {
+        width: 100%;
+    }
+    > ul.nav:not(.nav-rooms) {
+        display: flex;
+        border-bottom: 1px solid rgba($black, 0.1);
+        > li.nav-item {
+            margin-right: 30px;
+            &:last-child {
+                margin-right: 0;
+            }
+            > a.nav-link {
+                @include font(400, 16px, 19px);
+                color: rgba($black, 0.6);
+                text-transform: capitalize;
+                padding: 0 0 10px;
+                cursor: pointer;
+                border-bottom: 5px solid $white;
+                &:hover,
+                &.active {
+                    color: $main-link-color;
+                    border-bottom-color: $main-link-color;
+                }
+            }
+        }
+    }
+}
+
+.tabs-secondary {
+    > ul.nav {
+        @include flex-item(center, center);
+        border: 1px solid $main-link-color;
+        max-width: 402px;
+        border-radius: 6px;
+        margin: 0 auto 35px;
+        @media (max-width: 500px) {
+            max-width: 262px;
+        }
+        .nav-item {
+            .nav-link {
+                @include flex-item(center, center);
+                @include font(500, 16px, 19px);
+                color: rgba($black, 0.6);
+                width: 200px;
+                min-height: 36px;
+                padding: 5px 10px;
+                text-transform: uppercase;
+                border-radius: 6px;
+                border-right: 1px solid $white;
+                &.active {
+                    border-color: $main-link-color;
+                    color: $main-link-color;
+                    background: rgba(238, 116, 70, 0.1);
+                }
+                @media (max-width: 500px) {
+                    width: 130px;
+                    font-size: 14px;
+                    padding: 5px;
+                }
+            }
+            &:last-child {
+                .nav-link {
+                    border-left: 1px solid $white;
+                    border-right: 0;
+                    &.active {
+                        border-left-color: $main-link-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Internal pages
+.wrapper-banner {
+    width: 100%;
+    min-height: 156px;
+    position: relative;
+    img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+            360deg,
+            #000000 -5.32%,
+            rgba(0, 0, 0, 0) 213.7%
+        );
+    }
+}
+
+// Thank you page
+
+.wrapper-thank-you {
+    @include flex-d(space-between, normal, column);
+    height: 100vh;
+    .custom-container-mini {
+        flex-grow: 1;
+    }
+    .content-thank-you {
+        @include flex-d(flex-start, center, column);
+        text-align: center;
+        padding: 50px 0;
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Tbale styling
+.table-custom {
+    thead {
+        background-color: rgba(238, 116, 70, 0.1);
+        th {
+            @include font(500, 18px, 21px);
+        }
+    }
+    tbody {
+        background-color: rgba(244, 244, 244, 0.5);
+        tr {
+            border-bottom: 3px solid $white;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        td,
+        td *:not(button) {
+            @include font(400, 16px, 19px);
+        }
+    }
+    thead th,
+    tbody td {
+        height: 40px;
+        vertical-align: middle !important;
+        border: none !important;
+        padding: 5px;
+        &:first-child {
+            padding-left: 10px;
+        }
+    }
+}
+.custom-container-checkout {
+    .section-card-holder {
+        .table-custom {
+            max-width: 100%;
+            thead {
+                th {
+                    padding: 5px 15px;
+                }
+            }
+            tbody {
+                td {
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+}
+.layout-internal-view-care {
+    .wrapper-header {
+        position: fixed;
+        width: 100%;
+        background-color: $white;
+        z-index: 999;
+    }
+    .wrapper-view-room {
+        padding-top: 75px;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-custom-tabs {
+        .tab-content:not(.tab-content-rooms) {
+            padding-top: 25px;
+        }
+        // > ul.nav:not(.nav-rooms) {
+        //     flex-wrap: wrap;
+        //     > li.nav-item {
+        //         margin-right: 0;
+        //         width: 50%;
+        //         cursor: pointer;
+        //         > a.nav-link {
+        //             border-bottom: none;
+        //             padding: 5px;
+        //             border: 2px solid #f3f3f3;
+        //             border-bottom: 3px solid #fff;
+        //         }
+        //     }
+        // }
+    }
+    .layout-internal-view-care {
+        .wrapper-view-room {
+            padding-top: 150px;
+        }
+    }
+}
+.sorted-image {
+    position: relative;
+    span {
+        color: $white;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+        font-weight: 700 !important;
+        box-shadow: 0 0 10px 0 #000;
+        line-height: 0;
+        cursor: pointer;
+    }
+}
+
+#ct-container {
+    z-index: 99999999 !important;
+}
+
+/* Custom Radio button scss */
+
+.radio-btns-wrapper {
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.radio-wrapper {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    padding-top: 6px;
+    padding-left: 35px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    word-break: break-word;
+    font-weight: 400 !important;
+    font-family: "Maven Pro", sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+/* Hide the browser's default radio button */
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.radio-wrapper {
+    &:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    input:checked ~ .checkmark {
+        background-color: #dd4a2c;
+    }
+}
+
+/* When the radio button is checked, add a blue background */
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.radio-wrapper {
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+}
+
+/* Style the indicator (dot/circle) */
+
+.btn-remove-add {
+    img {
+        margin-right: 5px;
+    }
+}
+
+/* Media query for payment cards */
+@media (max-width: 767px) {
+    .radio-wrapper {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 150px;
+    }
+}

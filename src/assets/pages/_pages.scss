@@ -1,0 +1,82 @@
+.content-terms {
+    * {
+        @include font(400, 16px, 21px);
+        color: $black;
+    }
+    a {
+        color: $main-btn-color !important;
+        font-weight: 500 !important;
+    }
+    strong, h4 {
+        font-weight: 700 !important;
+    }
+    h4 {
+        margin-bottom: 15px !important;
+    }
+    ul, ol {
+        li {
+            margin-bottom: 15px;
+        }
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    .list-contents {
+        margin-bottom: 25px;
+    }   
+    .list-items {
+        counter-reset: section;
+        .list-item {
+            margin-bottom: 25px;
+            h4 {
+                counter-reset: subsection;
+                &::before {
+                    counter-increment: section;
+                    content: counter(section) ".";
+                    padding-right: 5px;
+                }
+            }
+            > ul {
+               list-style: none; 
+               padding: 0 0 0 10px;
+               margin: 0;
+               > li {
+                    counter-reset: subsubsection;
+                    &::before {
+                        counter-increment: subsection;
+                        content: counter(section) "." counter(subsection) " ";
+                        padding-right: 2px;
+                    } 
+                    ul {
+                        margin-top: 15px;
+                    }
+                    ul.list-normal { 
+                        list-style-type: disc;
+                    }
+                    ul:not(.list-normal) {
+                        list-style-type: none;
+                        margin: 0 0 0 10px;
+                        padding: 0;
+                        li::before {
+                            counter-increment: subsubsection;
+                            content: counter(section) "." counter(subsection) "." counter(subsubsection);
+                            padding-right: 5px;
+                        } 
+                    } 
+               }
+            }
+            &.list-item-more {
+                > ul > li {
+                    &:before {
+                        font-weight: 700;
+                    }
+                    > span {
+                        margin-bottom: 10px;
+                        display: inline-block;
+                        font-weight: 700 !important;
+                    }
+                }
+            }
+        }
+    }
+}

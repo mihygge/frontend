@@ -1,0 +1,147 @@
+@import "../../assets/styles/_colors.scss";
+@import "../../assets/styles/_mixin.scss";
+
+.modal-dialog.modal-bank-details {
+  .image-upload {
+    margin-bottom: 20px;
+    .custom-file-upload {
+      label {
+        @include flex-d(center, center, column);
+        text-align: center;
+        border-radius: 4px;
+        border: 1px dashed rgba($black, 0.1);
+        min-height: 120px;
+        text-decoration: none;
+        img {
+          margin-bottom: 10px;
+        }
+        > span {
+          color: $black;
+          max-width: 82%;
+          span {
+            color: $main-btn-color;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .selected-files {
+      display: none;
+    }
+    .uploaded-file {
+      display: inline-flex;
+      margin-top: 20px;
+      border: 1px dashed rgba($black, 0.3);
+      padding: 7px;
+      border-radius: 4px;
+      img {
+        &:last-child:not(:first-child) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  p.note {
+    @include flex-item(center, center);
+    @include font(500, 14px, 16px);
+    color: #7a7a7a;
+    margin-bottom: 15px;
+    img {
+      margin-right: 6px;
+    }
+  }
+  .selector-account {
+    width: 220px;
+    margin-bottom: 40px !important;
+  }
+  .calendar-date {
+    .datepicker-field {
+      background: $white url("../../assets/images/calendar1.svg") no-repeat
+        right 10px top 7px;
+    }
+  }
+  .form-check-bank-deatils {
+    margin-bottom: 30px;
+    margin-right: 0;
+    label {
+      padding-left: 15px;
+      p {
+        @include font(500, 14px, 16px);
+        color: $text-color-sub;
+        margin: 0;
+        a {
+          @include font(500, 14px, 16px);
+          color: $main-btn-color;
+        }
+      }
+    }
+  }
+  .note-stripe {
+    @include font(400, 16px, 22px);
+    color: $black;
+    text-align: center;
+    a {
+      color: $main-btn-color;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-dialog {
+    .modal-content {
+      margin: 0 auto;
+      .modal-header {
+        margin-bottom: 30px;
+        .modal-title {
+          font-size: 18px;
+          padding: 0;
+          line-height: 24px;
+        }
+      }
+    }
+    &.modal-bank-details {
+      .selector-account {
+        width: 100%;
+        margin-bottom: 10px !important;
+      }
+      .image-upload {
+        text-align: center;
+        .uploaded-file {
+          margin-top: 15px;
+          flex-wrap: wrap;
+          img {
+            margin: 0 auto;
+            &:last-child:not(:first-child) {
+              margin-left: 0;
+              margin: 10px auto 0;
+            }
+          }
+        }
+      }
+    }
+    .btn-theme {
+      &.btn-in-modal {
+        font-weight: 600 !important;
+        font-size: 16px;
+        line-height: 18px;
+        min-height: 35px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 392px) {
+  .modal-dialog {
+    &.modal-bank-details {
+      .image-upload {
+        .uploaded-file {
+          img {
+            &:last-child:not(:first-child) {
+              margin-left: 10px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

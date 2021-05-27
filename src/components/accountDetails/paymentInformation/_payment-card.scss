@@ -1,0 +1,215 @@
+@import "../../../assets/styles/_colors.scss";
+@import "../../../assets/styles/_mixin.scss";
+
+.payment-credit-card {
+  max-width: 400px;
+  min-height: 220px;
+  border-radius: 10px;
+  padding: 15px 10px;
+  background-color: rgba(221, 74, 44, 0.08);
+  .form-group {
+    .form-control {
+      border-color: rgba($black, 0.3);
+    }
+  }
+  .two-inputs-holder {
+    .form-group {
+      &:first-child {
+        width: calc(65% - 10px);
+      }
+      &:last-child {
+        width: calc(35% - 10px);
+      }
+    }
+  }
+  .cvv-and-checkout {
+    @include flex-item(space-between, center);
+    .checkbox {
+      margin-top: 20px;
+    }
+    .form-group-cvv {
+      min-width: 90px;
+    }
+  }
+}
+
+.StripeElement {
+  @include font(500, 16px, 19px);
+  @include placeholder-color($text-color-sub);
+  width: 100% !important;
+  color: $black;
+  border: 1px solid rgba($black, 0.3) !important;
+  border-radius: 4px;
+  background: $white;
+  padding: 10px 15px 5px;
+  height: 36px !important;
+  &:hover,
+  &:focus {
+    border-color: rgba($black, 0.5);
+  }
+  &--invalid {
+    color: $text-erorr;
+    border-color: $field-error !important;
+  }
+}
+
+.section-payment-info {
+  position: relative;
+  .table-custom.table-payment-info {
+    max-width: 60%;
+    th,
+    td {
+      &:nth-of-type(1) {
+        width: calc(100% - 240px);
+      }
+      &:nth-of-type(2) {
+        width: 150px;
+      }
+      &:nth-of-type(3) {
+        width: 90px;
+      }
+    }
+  }
+  .btn-new-card {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .btn-theme {
+      min-width: 180px;
+    }
+  }
+}
+
+.modal-mini.modal-card-popup {
+  max-width: 100%;
+  .modal-content {
+    width: auto !important;
+    min-width: 600px;
+    .modal-body {
+      display: flex;
+      justify-content: center;
+      .btn-theme {
+        text-transform: capitalize;
+      }
+      .credit-card-holder {
+          width: 370px;
+      }
+    }
+  }
+}
+
+.credit-card-block {
+  background: rgba(221, 74, 44, 0.08);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.payment-input {
+  width: 100%;
+  > div:first-child {
+    min-height: 36px;
+    height: auto;
+    border-color: rgba($black, 0.5);
+    box-shadow: none;
+    padding: 5px 15px;
+    input {
+      @include font(500, 16px, 19px);
+      @include placeholder-color($text-color-sub);
+      color: $black;
+      &#cardNumber {
+        padding-right: 10px;
+        width: calc(100% - 6.5em);
+      }
+    }
+  }
+  > div:last-child {
+    @include font(500, 12px, 14px);
+    color: $text-erorr;
+    margin-top: 4px;
+  }
+}
+/* Media query for payment cards */
+@media (max-width: 996px) {
+  .section-payment-info {
+    .table-custom {
+      &.table-payment-info {
+        max-width: 85%;
+        .btn-theme {
+          font-weight: 600 !important;
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  .payment-credit-card {
+	.two-inputs-holder {
+		.form-group {
+		  width: calc(70% - 10px);
+		}
+	}
+  }
+}
+@media (max-width: 767px) {
+  .section-payment-info {
+    .btn-new-card {
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      .btn-theme {
+        font-weight: 600 !important;
+        font-size: 14px;
+        line-height: 16px;
+        min-height: 35px;
+        padding: 4px 8px;
+        min-width: 150px;
+      }
+    }
+    .table-custom {
+      thead {
+        th {
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+      &.table-payment-info {
+        max-width: 100%;
+        th,
+        td {
+          &:nth-of-type(1) {
+            width: 60%;
+          }
+          &:nth-of-type(2) {
+            width: calc(40% - 120px);
+          }
+        }
+        .btn-theme {
+          font-weight: 600 !important;
+          font-size: 16px;
+          padding-left: 25px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  .payment-input {
+    > div:first-child {
+      input {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+  .modal-mini.modal-card-popup {
+    .modal-content {
+      padding: 10px 15px;
+      min-width: 300px;
+      .modal-body {
+        .btn-theme {
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}

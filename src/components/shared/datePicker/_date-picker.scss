@@ -1,0 +1,49 @@
+@import '../../../assets/styles/_colors.scss';
+@import '../../../assets/styles/_mixin.scss';
+
+.react-datepicker-wrapper {
+    width: 100%;
+    display: block;
+    .react-datepicker__input-container {
+        .datepicker-field {
+            @include font(500, 16px, 19px);
+            @include placeholder-color($text-color-sub);
+            color: $black;
+            border: 1px solid rgba($black, 0.5);
+            border-radius: 4px;
+            background: $white;
+            padding: 5px 15px;
+            height: 36px;
+            width: 100%;
+            &:hover, &:focus {
+                border-color: rgba($black, 0.5);
+            }
+        }
+    }
+}
+
+.calendar-date {
+    position: relative;
+}
+
+.react-datepicker-popper {
+    transform: translate(0) !important;
+    top: 100% !important;
+    .react-datepicker {
+        font-family: $default-font;
+        border-color: rgba($black, 0.1);
+        border-radius: 4px;
+        .react-datepicker__day {
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .react-datepicker__day--keyboard-selected {
+            background-color: $main-link-color;
+        }
+        .react-datepicker__triangle {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

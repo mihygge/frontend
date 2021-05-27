@@ -1,0 +1,112 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/mixin.scss";
+
+.section-filters-make-booking {
+    margin-bottom: 40px;
+    .title-filters {
+        @include font(500, 16px, 19px);
+    }
+
+    .section-checks {
+        .section-checks-common {
+            @include flex-item(flex-start, center);
+            border-bottom: 1px solid rgba($black, 0.1);
+            flex-wrap: wrap;
+            .form-group-radio-checkbox {
+                margin-right: 20px;
+                margin-bottom: 25px;
+                label {
+                    font-weight: 400 !important;
+                }
+                &:nth-last-of-type(1) {
+                    margin-right: 0;
+                }
+            }
+            &.section-checks-room {
+                @include flex-d(flex-start, flex-start, column);
+            }
+            .field-beds {
+                margin-right: 20px;
+            }
+        }
+        .checks-room {
+            @include flex-item(flex-start, center);
+            span {
+                @include font(500, 14px, 16px);
+                color: rgba($black, 0.5);
+                min-width: 105px;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+            &:nth-of-type(1) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .buttons-container {
+        @include flex-item(flex-end, center);
+        padding-top: 10px;
+        button {
+            @include font(500, 14px, 16px);
+            color: rgba($black, 0.7);
+            text-transform: uppercase;
+            &:nth-of-type(1) {
+                margin-right: 20px;
+            }
+        }
+    }
+    .filter-tabs {
+        padding-top: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .section-filters-make-booking {
+        margin-bottom: 30px;
+        .section-checks {
+            .section-checks-common {
+                .form-group-radio-checkbox {
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                    width: 50%;
+                }
+            }
+            .checks-room {
+                flex-wrap: wrap;
+                span {
+                    min-width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .buttons-container {
+            padding-top: 10px;
+        }
+        .nav-custom-tabs {
+            > ul.nav:not(.nav-rooms) {
+                flex-wrap: wrap;
+                > li.nav-item {
+                    margin-right: 0;
+                    width: 50%;
+                    cursor: pointer;
+                    > a.nav-link {
+                        border-bottom: none;
+                        padding: 5px;
+                        border: 2px solid #f3f3f3;
+                        // border-bottom: 3px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .section-filters-make-booking {
+        .section-checks {
+            .section-checks-common {
+                .form-group-radio-checkbox {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

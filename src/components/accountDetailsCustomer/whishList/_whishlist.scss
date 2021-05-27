@@ -1,0 +1,126 @@
+@import '../../../assets/styles/_colors.scss';
+@import '../../../assets/styles/_mixin.scss';
+
+.container-whishlist {
+    height: calc(100vh - 30px - 27px - 58px - 60px - 75px - 30px);
+    overflow-y: auto;
+    @media (max-width: 767px) {
+        height: auto;
+    }
+    .room-details.home-details {
+        position: relative;
+        .details-left-section {
+            @include flex-item(flex-start, center);
+            width: calc(100% - 150px);
+            @media (max-width: 1023px) {
+                width: calc(100% - 140px);
+            }
+            @media (max-width: 767px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            @media (max-width: 650px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        .img-container {
+            align-self: center;
+            @media (max-width: 1023px) {
+                width: 180px;
+            }
+            @media (max-width: 767px) {
+                align-self: flex-start;
+                width: 150px;
+                margin: 0 0 20px;
+            }
+        }
+        .details-brief {
+            width: auto;
+            @media (max-width: 767px) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        .details-fee.buttons-container {
+            justify-content: space-between;
+            @media (max-width: 1023px) { 
+                width: 140px;
+            }
+            .social-icons {
+                width: 100%;
+                @include flex-item(flex-end, center);
+                a.btn-no-box {
+                    min-width: 0;
+                    min-height: 0;
+                }
+                a:first-child {
+                    margin-right: 20px;
+                }
+            }
+            .buttons-actions {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+                button:first-child {
+                    min-width: 140px;
+                }
+                @media (max-width: 1023px) {
+                    flex-direction: column;
+                    button:first-child {
+                        margin: 0 0 20px;
+                    }
+                }
+            }
+            @media (max-width: 650px) {
+                width: 100%;
+                .buttons-actions {
+                    flex-direction: row;
+                    .btn-theme {
+                        margin-bottom: 0;
+                        min-width: 110px;
+                        height: 30px;
+                        &:first-child {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+                .social-icons {
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                    width: auto;
+                    a {
+                        width: 28px;
+                        &:first-child {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .section-facilities {
+        @media (max-width: 650px) {
+            margin-top: 20px;
+        }
+        ul li {
+            &:first-child {
+                padding-left: 0;
+            }
+            @media (max-width: 1023px) {
+                margin-right: 15px;
+                span {
+                    font-size: 13px;
+                }
+            }
+            @media (max-width: 500px) {
+                margin: 0 0 10px;
+                &:nth-child(odd) {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

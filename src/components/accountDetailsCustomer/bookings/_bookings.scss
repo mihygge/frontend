@@ -1,0 +1,119 @@
+@import '../../../assets/styles/_colors.scss';
+@import '../../../assets/styles/_mixin.scss';
+
+.container-whishlist.section-home-details.container-bookings {
+    .room-details.home-details.card-bookings {
+        flex-direction: row;
+        justify-content: space-between;
+        @media (max-width: 650px) {
+            flex-direction: column;
+        }
+        .section-img-details-brief {
+            @include flex-item(flex-start, center);
+            width: calc(100% - 170px);
+            @media (max-width: 1023px) {
+                flex-direction: column;
+                align-items: flex-start;
+                width: calc(100% - 130px);
+            }
+            @media (max-width: 650px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        .img-container {
+            width: 150px;
+            align-self: center;
+            @media (max-width: 1023px) {
+                align-self: flex-start;
+                margin-bottom: 20px;
+            }
+            @media (max-width: 767px) {
+                margin: 0;
+            }
+            @media (max-width: 650px) {
+                width: 120px;
+            }
+        }
+        .details-brief {
+            width: auto;
+            padding: 0 15px;
+            margin-bottom: 0;
+            @media (max-width: 1023px) {
+                padding: 0;
+            }
+            .items-left {
+                max-width: 100%;
+            }
+            .details-top {
+                margin-bottom: 25px;
+            }
+            .room-type {
+                margin-bottom: 5px;
+            }
+            .status-booking {
+                @include font(400, 14px, 16px);
+                color: $black;
+                span {
+                    @include font(500, 14px, 16px);
+                    &.status-pending, &.status-in-progress {
+                      color: $status-pending;
+                    }
+                    &.status-active, &.status-accepted {
+                      color: $status-active;
+                    }
+                    &.status-reject, &.status-rejected, &.status-closed, &.status-cancelled {
+                      color: $text-erorr;
+                    }
+                }
+            }
+            .details-bottom .items-list .item {
+                @media (max-width: 650px) {
+                    span.title {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                    strong {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                    span:not(.title) {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+            }
+        }
+        .details-fee {
+            width: 170px;
+            align-items: flex-end;
+            .amount-paid {
+                @include font(700, 18px, 24px);
+                color: rgba($black, 0.6);
+            }
+            .btn-theme {
+                margin-bottom: 0;
+                text-transform: none;
+            }
+            @media (max-width: 767px) {
+                .amount-paid {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+                .btn-theme {
+                    margin: 0;
+                    min-width: 150px;
+                }
+            }
+            @media (max-width: 650px) {
+                width: auto;
+                justify-content: space-between;
+                margin-top: 0;
+                .amount-paid {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

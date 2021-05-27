@@ -1,0 +1,46 @@
+.form-group-radio-checkbox {
+    @include flex-d(flex-start, flex-start, column);
+    > div {
+        @include flex-item(flex-start, center);
+    }
+    label {
+        @include font(500, 14px, 16px);
+        color: $text-color-sub;
+        padding-left: 10px;
+        margin-bottom: 0;
+        word-break: break-word;
+    }
+    .form-control[type=checkbox] {
+        @include input-appearance();
+        @include no-user-select();
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border: none;
+        &:after {
+            @include positioned(0, 0);
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba($black, 0.6);
+            border-radius: 2px;
+        }
+        &:before {
+            @include positioned(4px, 7px);
+            border: solid $main-btn-color;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+            width: 6px;
+            height: 10px;
+        }
+        &:checked {
+            &::after {
+                border-color: $main-btn-color;
+            }
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
